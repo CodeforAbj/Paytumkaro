@@ -1,5 +1,5 @@
 const z = require("zod");
-const userSchema = require("../zodSchemas");
+const { userSchema } = require("../zodSchemas");
 function zodSignUpVerify(req, res, next) {
   const userPayload = {
     username: req.body.username,

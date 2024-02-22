@@ -20,4 +20,8 @@ const userSchema = z.object({
   email: z.string().max(50).email(),
 });
 
-module.exports = userSchema;
+const loginSchema = z.object({
+  loginIdentifier: z.string().min(3).max(30),
+  password: z.string().min(8).max(100),
+});
+module.exports = { userSchema, loginSchema };
