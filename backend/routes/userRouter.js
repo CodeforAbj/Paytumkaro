@@ -1,6 +1,6 @@
 const express = require("express");
 const { alreadyExists } = require("../Middlewares/userchecks");
-const User = require("../db");
+const { User } = require("../db");
 const userRouter = express.Router();
 const zodSignUpVerify = require("../Middlewares/zodSignUpVerify");
 const jwt = require("jsonwebtoken");
