@@ -1,12 +1,22 @@
 const User = require("../db");
 
 async function alreadyExists(req, res, next) {
-  const username = req.body.username;
-  const dbRes = await User.findOne({ username: username });
-  if (dbRes) {
-    res.status(411).json({ message: "Email already taken / Incorrect inputs" });
-  } else {
-    next();
+  try {
+    const username = req.body.username;
+    const dbRes = await User.findOne({ username: username });
+    if (dbRes) {
+      res
+        .status(411)
+        .json({ message: "Email already taken / Incorrect inputs" });
+    } else {
+      next();
+    }
+  } catch (error) {
+    console.log("Error in Already Exists");
+    res.status(404).json({
+      msg: "error at already exists",
+      error: error,
+    });
   }
 }
 
