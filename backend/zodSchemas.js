@@ -24,4 +24,11 @@ const loginSchema = z.object({
   loginIdentifier: z.string().min(3).max(30),
   password: z.string().min(8).max(100),
 });
-module.exports = { userSchema, loginSchema };
+
+// Safety check for put request
+const updateBodySchema = z.object({
+  password: z.string().optional(),
+  firstName: z.string().optional(),
+  lastName: z.string().optional(),
+});
+module.exports = { userSchema, loginSchema, updateBodySchema };
