@@ -5,10 +5,11 @@ import { SubHeading } from "../components/SubHeading";
 import { BlackButton } from "../components/BlackButton";
 import { BottomWarning } from "../components/BottomWarning";
 import ProjectTitle from "../components/ProjectTitle";
+import BaseBackground from "../components/BaseBackground";
 
 export default function Signup() {
   return (
-    <div className="bg-yellow-300 h-screen flex flex-col items-center justify-center">
+    <BaseBackground>
       <ProjectTitle />
       <Card>
         <Heading label={"Signup"} />
@@ -30,6 +31,6 @@ export default function Signup() {
           to={"/signin"}
         ></BottomWarning>
       </Card>
-    </div>
+    </BaseBackground>
   );
 }

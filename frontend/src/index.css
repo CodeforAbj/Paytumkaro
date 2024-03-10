@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  caret-color: transparent;
+  /* anoying cursor everywhere */
+}
+.h-11\/12 {
+  height: 91.666667%;
+}

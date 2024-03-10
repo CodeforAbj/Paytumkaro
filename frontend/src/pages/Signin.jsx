@@ -5,10 +5,11 @@ import { Heading } from "../components/Heading";
 import InputField from "../components/InputField";
 import ProjectTitle from "../components/ProjectTitle";
 import { SubHeading } from "../components/SubHeading";
+import BaseBackground from "../components/BaseBackground";
 
 export default function Signin() {
   return (
-    <div className=" bg-yellow-300 h-screen flex flex-col items-center justify-center">
+    <BaseBackground>
       <ProjectTitle />
       <Card>
         <Heading label={"Sign In"} />
@@ -30,6 +31,6 @@ export default function Signin() {
           to={"/signup"}
         />
       </Card>
-    </div>
+    </BaseBackground>
   );
 }
