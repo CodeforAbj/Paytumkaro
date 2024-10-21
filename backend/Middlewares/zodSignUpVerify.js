@@ -16,7 +16,7 @@ function zodSignUpVerify(req, res, next) {
     next();
   } else {
     res.status(400).json({
-      message: "Zod fail xD",
+      message: "Fill form again some feild is wrong",
       error: userZodCheck.error.errors,
     });
   }

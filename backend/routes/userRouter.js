@@ -51,7 +51,7 @@ userRouter.post("/signup", zodSignUpVerify, alreadyExists, async (req, res) => {
   } catch (error) {
     console.error(" Registration Caught Error:", error);
     res.status(500).json({
-      msg: "Internal Server Error in registration",
+      message: "Internal Server Error in registration",
       error: error,
     });
   }
@@ -98,7 +98,7 @@ userRouter.post("/signin", zodLoginVerify, async (req, res) => {
   } catch (error) {
     console.error(" Login Caught Error:", error);
     res.status(500).json({
-      msg: "Internal Server Error in login",
+      message: "Internal Server Error in login",
       error: error,
     });
   }
@@ -139,7 +139,7 @@ userRouter.get("/bulk", authMiddleware, async (req, res) => {
     });
 
     res.json({
-      user: users.map((user) => ({
+      users: users.map((user) => ({
         username: user.username,
         firstName: user.firstName,
         lastName: user.lastName,

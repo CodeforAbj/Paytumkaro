@@ -14,7 +14,7 @@ async function alreadyExists(req, res, next) {
   } catch (error) {
     console.log("Error in Already Exists");
     res.status(404).json({
-      msg: "error at already exists",
+      message: "error at already exists",
       error: error,
     });
   }
